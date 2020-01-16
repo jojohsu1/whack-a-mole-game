@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Noto+Sans+TC|Noto+Serif+TC|Oswald&display=swap');
+:root {
+    --light-yellow-color: #FFC217;
+    --dark-yellow-color: #FFA412;
+    --red-color: rgb(235, 0, 0);
+    --brown-color: #350202;
+    --main-font-size: 6rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+    font-family: 'Amatic SC', cursive;
+}
+
+body {
+    background-image: url(./images/pattern-2.png);
+    background-size: cover;
+}
+
+.container {
+    width: 768px;
+    height: 680px;
+    background-color: #350202;
+    margin: 1rem auto;
+    border-radius: 20px;
+}
+
+.title {
+    position: relative;
+    font-family: 'Mouse Memoirs', sans-serif;
+    color: var(--light-yellow-color);
+    text-align: center;
+    font-weight: normal;
+    font-size: var(--main-font-size);
+    margin: 3rem auto;
+    padding-top: 3rem;
+}
+
+.startButton {
+    position: absolute;
+    background: var(--red-color);
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Mouse Memoirs', sans-serif;
+    padding: .6rem;
+    border-radius: 10px;
+    border: 3PX solid #fff;
+    top: 150px;
+    letter-spacing: .1rem;
+}
+
+.game__container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    grid-gap: 40px;
+}
+
+.info__place {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game_info {
+    color: var(--light-yellow-color);
+    font-size: 3rem;
+}
+
+.mole__place {
+    color: var(--light-yellow-color);
+    border-bottom: 5px solid rgb(31, 0, 0);
+    width: 110px;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mole {
+    position: absolute;
+    width: 105px;
+    height: auto;
+    top: 100%;
+    transition: all 0.4s;
+    align-self: center;
+}
+
+.mole:hover {
+    cursor: pointer;
+}
+
+.mole.up {
+    top: 0;
+}
+
+@media(max-width: 600px) {
+    .game__container {
+        grid-template-columns: repeat(2, auto);
+    }
+    .game_info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
